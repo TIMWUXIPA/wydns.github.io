@@ -18,3 +18,34 @@ h1,h2,h3{font-family:var(--serif);font-weight:500}.eyebrow{font-family:var(--mon
 .wy-header nav{margin:0;border:0}.wy-header .wy-language{color:var(--slate)}
 
 .deck{position:static;max-width:620px;margin-top:24px;line-height:1.7}.intro h1{max-width:900px}
+
+/* Warm, consistent shell: 1056px content edge on every directory. */
+:root{color-scheme:light;--accent:#a34f38;--site-width:1056px;--gutter:32px}
+.wy-header{width:min(var(--site-width),calc(100% - 64px));padding:24px 0;gap:20px}
+.wy-header nav{gap:8px 20px;justify-content:flex-end}
+.wy-header nav>a{padding:8px 0;border-bottom:2px solid transparent;line-height:1.5}
+.wy-header nav>a[aria-current]{color:var(--accent);border-bottom-color:var(--accent);font-weight:650}
+.wy-header a:hover{color:var(--accent);text-decoration:none}
+.wy-language{margin-left:8px;gap:8px}.wy-language select{background:var(--white);min-height:40px;max-width:210px}
+.wy-header a:focus-visible,.wy-header select:focus-visible{outline-color:var(--accent)}
+body:not(.wy-game)>main:not(.wrap){box-sizing:border-box;max-width:none;width:min(var(--site-width),calc(100% - 64px));padding:32px 0;margin:0 auto}
+body>main.wrap,.wrap{width:min(var(--site-width),calc(100% - 64px))}
+body>footer:not(.wrap){box-sizing:border-box;width:min(var(--site-width),calc(100% - 64px));max-width:none;padding:24px 0 32px}
+.intro h1{overflow-wrap:anywhere}.lead,.lede,.deck{line-height:1.8}
+.card{border-color:var(--gray-300)}.card:hover{border-color:var(--accent)}
+.eyebrow,.number,.text-link,.play{color:var(--accent)}
+.wy-notice{box-sizing:border-box;width:min(var(--site-width),calc(100% - 64px));margin:24px auto 0}
+@media(max-width:700px){
+ .wy-header{width:calc(100% - 40px);gap:16px;padding:20px 0}
+ .wy-header nav{width:100%;justify-content:flex-start;gap:4px 20px}
+ .wy-language{flex-basis:100%;margin:10px 0 0;justify-content:space-between}
+ .wy-language select{max-width:calc(100% - 64px);min-width:180px}
+ body:not(.wy-game)>main:not(.wrap),body>main.wrap,.wrap,body>footer:not(.wrap),.wy-notice{width:calc(100% - 40px)}
+ body:not(.wy-game)>main:not(.wrap){padding:16px 0}.wy-notice{margin:20px auto 0}
+}
+
+/* Shared keyboard entry and deliberate return targets, not prose links. */
+.skip{position:fixed;top:8px;left:12px;transform:translateY(-180%);z-index:1000;padding:10px 16px;background:var(--white);color:var(--ink);border:2px solid var(--accent);border-radius:6px;font:16px/1.5 var(--sans)}
+.skip:focus{transform:none;outline:3px solid var(--accent);outline-offset:3px}
+.wy-return{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;padding:6px 0}
+.wy-return:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
